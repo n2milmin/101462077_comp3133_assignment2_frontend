@@ -1,0 +1,33 @@
+<div class="card-wrapper">
+    <mat-card>
+        <mat-card-header>
+            <h2>Employee Details</h2>
+        </mat-card-header>
+        <mat-card-content>
+            <div class="row"><strong>ID:</strong><span>{{ employee.id }}</span></div>
+            <div class="row"><strong>First Name:</strong><span>{{ employee.first_name }}</span></div>
+            <div class="row"><strong>Last Name:</strong><span>{{ employee.last_name }}</span></div>
+            <div class="row"><strong>Email:</strong><span>{{ employee.email }}</span></div>
+            <div class="row"><strong>Gender:</strong><span>{{ employee.gender }}</span></div>
+            <div class="row"><strong>Designation:</strong><span>{{ employee.designation }}</span></div>
+            <div class="row"><strong>Salary:</strong><span>{{ employee.salary | currency }}</span></div>
+            <div class="row"><strong>Date of Joining:</strong><span>{{ employee.date_of_joining | date:'shortDate' }}</span></div>
+            <div class="row"><strong>Department:</strong><span>{{ employee.department }}</span></div>
+            <div class="row">
+            <strong>Photo:</strong>
+            <span>
+                <img [src]="employee.employee_photo" alt="No photo for employee" width="50" height="50" />
+            </span>
+            </div>
+            <div class="row"><strong>Created At:</strong><span>{{ employee.created_at | date:'short' }}</span></div>
+            <div class="row"><strong>Updated At:</strong><span>{{ employee.updated_at | date:'short' }}</span></div>
+        
+            <div class="actions">
+                <button mat-raised-button color="primary" (click)="goBack()">Back</button>
+                <button mat-raised-button color="primary" (click)="updateEmployee()">Update</button>
+                <button mat-raised-button color="warn" (click)="deleteEmployee()">Delete</button>
+            </div>
+        </mat-card-content>
+    </mat-card>
+</div>
+  

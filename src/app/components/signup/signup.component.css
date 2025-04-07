@@ -1,0 +1,31 @@
+.signup-container {
+    max-width: 400px;
+    margin: 3rem auto;
+    padding: 2rem;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    background: white;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  
+    h2 {
+      text-align: center;
+      margin-bottom: 1rem;
+    }
+  
+    .error {
+      color: red;
+      margin-top: 1rem;
+      text-align: center;
+    }
+  
+    button {
+      width: 100%;
+      margin-top: 1rem;
+    }
+    
+  .login-link {
+    margin-top: 20px;
+    text-align: center;
+  }
+}
+  

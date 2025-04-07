@@ -1,0 +1,46 @@
+.employee-list-container {
+    max-width: 80%;
+    margin: 2rem auto;
+    padding: 2rem;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 0 12px rgba(0, 0, 0, 0.1);
+  
+    h2 {
+      text-align: center;
+      margin-bottom: 1.5rem;
+    }
+  
+    .employee-id {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+  
+    table {
+      width: 100%;
+      overflow-x: auto;
+      margin-top: 20px;
+    }
+  
+    th.mat-header-cell {
+      font-weight: bold;
+      background-color: #f1f1f1;
+    }
+  
+    td.mat-cell, th.mat-header-cell {
+      text-align: center;
+    }
+  
+    button {
+      margin: 0 5px;
+    }
+  
+    .error {
+      color: red;
+      margin-top: 1rem;
+      text-align: center;
+    }
+  }
+  

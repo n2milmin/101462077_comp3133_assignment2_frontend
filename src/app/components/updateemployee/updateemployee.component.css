@@ -1,0 +1,28 @@
+.form-container {
+    display: flex;
+    justify-content: center;  
+    align-items: center;     
+    margin-top: 50px;    
+    flex-direction: column;   
+}
+  
+form {
+    width: 100%;
+    max-width: 600px;      
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+  
+mat-form-field {
+    width: 100%;
+    margin-bottom: 16px; 
+}
+  
+.error {
+    color: red;
+    font-size: 14px;
+    margin-top: 10px;
+}
+  

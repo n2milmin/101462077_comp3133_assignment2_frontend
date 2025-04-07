@@ -1,0 +1,78 @@
+<div class="form-container">
+    <h2>Update Employee</h2>
+    <form [formGroup]="updateEmployeeForm" (ngSubmit)="onSubmit()">
+        <mat-form-field>
+            <mat-label>ID</mat-label>
+            <input matInput formControlName="id" [disabled]="true" />
+        </mat-form-field>
+    
+        <mat-form-field>
+            <mat-label>First Name</mat-label>
+            <input matInput formControlName="first_name" />
+            <mat-error *ngIf="updateEmployeeForm.controls['first_name'].hasError('required')">First name is required</mat-error>
+        </mat-form-field>
+    
+        <mat-form-field>
+            <mat-label>Last Name</mat-label>
+            <input matInput formControlName="last_name" />
+            <mat-error *ngIf="updateEmployeeForm.controls['last_name'].hasError('required')">Last name is required</mat-error>
+        </mat-form-field>
+    
+        <mat-form-field>
+            <mat-label>Email</mat-label>
+            <input matInput formControlName="email" />
+            <mat-error *ngIf="updateEmployeeForm.controls['email'].hasError('required')">Email is required</mat-error>
+            <mat-error *ngIf="updateEmployeeForm.controls['email'].hasError('email')">Enter a valid email</mat-error>
+        </mat-form-field>
+    
+        <mat-form-field>
+            <mat-label>Gender</mat-label>
+            <mat-select formControlName="gender">
+            <mat-option value="Male">Male</mat-option>
+            <mat-option value="Female">Female</mat-option>
+            <mat-option value="Other">Other</mat-option>
+            </mat-select>
+        </mat-form-field>
+    
+        <mat-form-field>
+            <mat-label>Designation</mat-label>
+            <mat-select formControlName="designation">
+            <mat-option *ngFor="let designation of designations" [value]="designation">{{ designation }}</mat-option>
+            </mat-select>
+        </mat-form-field>
+    
+        <mat-form-field>
+            <mat-label>Department</mat-label>
+            <mat-select formControlName="department">
+            <mat-option *ngFor="let department of departments" [value]="department">{{ department }}</mat-option>
+            </mat-select>
+        </mat-form-field>
+    
+        <mat-form-field>
+            <mat-label>Salary</mat-label>
+            <input matInput formControlName="salary" type="number" />
+            <mat-error *ngIf="updateEmployeeForm.controls['salary'].hasError('required')">Salary is required</mat-error>
+            <mat-error *ngIf="updateEmployeeForm.controls['salary'].hasError('min')">Salary must be a positive number</mat-error>
+        </mat-form-field>
+    
+        <mat-form-field>
+            <mat-label>Date of Joining</mat-label>
+            <input matInput [matDatepicker]="picker" formControlName="date_of_joining" />
+            <mat-hint>MM/DD/YYYY</mat-hint>
+            <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+            <mat-error *ngIf="updateEmployeeForm.controls['date_of_joining'].hasError('required')">Date of joining is required</mat-error>
+        </mat-form-field>
+    
+        <mat-form-field>
+            <mat-label>Employee Photo</mat-label>
+            <input matInput formControlName="employee_photo" type="text" />
+        </mat-form-field>
+    
+        <button mat-raised-button color="primary" type="submit" [disabled]="updateEmployeeForm.invalid">Save</button>
+        <button mat-raised-button color="warn" (click)="onCancel()">Cancel</button>
+    
+        <div *ngIf="error" class="error">{{ error }}</div>
+    </form>
+</div>
+  
