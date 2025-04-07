@@ -6,8 +6,8 @@ import { CommonModule } from '@angular/common';
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 
-const LOGIN_QUERY = gql`
-  query Login($username: String, $password: String!) {
+const LOGIN_MUTATION = gql`
+  mutation Login($username: String, $password: String!) {
     login(username: $username, password: $password) {
       token
 }}`
@@ -40,12 +40,12 @@ export class LoginComponent {
     const { username, password } = this.loginForm.value;
 
     this.apollo.watchQuery({
-      query: LOGIN_QUERY,
+      query: LOGIN_MUTATION,
       variables: { username, password}
     })
     .valueChanges.subscribe({
       next: (result: any) => {
-        const token = result?.data?.login;
+        const token = result?.data?.login?.token;
         if(token){
           localStorage.setItem('token', token);
           this.router.navigate(['/employees']);
