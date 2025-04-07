@@ -67,6 +67,8 @@ export class EmployeelistComponent {
     'salary',
     'actions'
   ];
+  designations: string[] = ['Admin', 'Manager', 'Developer', 'HR', 'Sales'];
+  departments: string[] = ['Engineering', 'HR', 'Marketing', 'Sales', 'Finance'];
   filterDesignation: string = '';
   filterDepartment: string = '';
   error: string | null = null;
