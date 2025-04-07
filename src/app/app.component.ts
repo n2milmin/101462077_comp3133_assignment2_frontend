@@ -22,7 +22,7 @@ export class AppComponent {
       this.router.navigate(['/employees']);
   }
 
-  onSubmit(): void {
+  onLogout(): void {
     if (confirm('Are you sure you want to log out?')) {
       localStorage.removeItem('token');
       alert('You have been logged out.');
