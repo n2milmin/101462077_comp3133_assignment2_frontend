@@ -39,11 +39,11 @@ export class LoginComponent {
 
     const { username, password } = this.loginForm.value;
 
-    this.apollo.watchQuery({
-      query: LOGIN_MUTATION,
+    this.apollo.mutate({
+      mutation: LOGIN_MUTATION,
       variables: { username, password}
     })
-    .valueChanges.subscribe({
+    .subscribe({
       next: (result: any) => {
         const token = result?.data?.login?.token;
         if(token){
